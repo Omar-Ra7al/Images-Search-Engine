@@ -1,0 +1,37 @@
+1------
+In CSS, the object-fit property specifies how an <img>, <video>, or <object> should be resized to fit its content box.
+It's particularly useful when you want to control the sizing and scaling of these elements within their containers.
+
+Here are the possible values for object-fit:
+
+fill: The replaced content is stretched to fill the entire content box. This might distort the aspect ratio of the content.
+contain: The replaced content is scaled to maintain its aspect ratio while fitting within the content box entirely.
+It might leave some empty space in the content box if the aspect ratio of the content and the box differ.
+cover: The replaced content is scaled to maintain its aspect ratio while covering the entire content box.
+This might result in parts of the content being cropped if the aspect ratio of the content and the box differ.
+none: The replaced content is not resized or scaled in any way. It retains its original size and aspect ratio.
+scale-down: The content is scaled down to fit the content box if it's smaller than its content box, maintaining its aspect ratio.
+If the content is larger than the content box, it behaves like contain.
+
+<!--  -->
+<!--  -->
+
+2--------
+
+In this example, the columns property is applied to the <ul> element, indicating that its content (the list items) should be divided into 3 columns, each with a preferred width of 200 pixels.
+
+To control the width of the child elements (in this case, the <li> elements), you can use CSS properties like width, max-width, or min-width applied directly to the child elements. These properties will affect the width of each individual item within the columns.
+
+<ul class="my-list">
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+  <!-- more list items -->
+</ul>
+.my-list {
+  columns: 3 200px; /* Display list items in 3 columns with each column having a width of 200px */
+  column-gap: 20px; /* Add a gap of 20px between columns */
+}
+
+3-------  
+display:block for the image to take he full content height if uaje the width 100%

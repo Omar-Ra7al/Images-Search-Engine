@@ -1,0 +1,316 @@
+/* Import gOOgle Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --main--transiton: 0.3s;
+}
+
+/* Start Search Box */
+.search {
+  min-height: 50vh;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.search img {
+  width: 100%;
+  height: 100%;
+  /* كدا عملنا الباك جراوند من ال اتش تي ام ال  */
+  object-fit: cover;
+  position: absolute;
+}
+
+.search .content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+.search h1 {
+  font-size: 2.65rem;
+  font-weight: 600;
+}
+.search p {
+  font-size: 1.5rem;
+  margin-top: 8px;
+  font-weight: 300;
+}
+
+.search .search-box {
+  height: 55px;
+  margin: 45px 0;
+  position: relative;
+}
+
+input,
+button,
+i {
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+.search .search-box input {
+  width: 100%;
+  height: 100%;
+  font-size: 1.1rem;
+  padding-left: 20px;
+  transition: var(--main--transiton);
+}
+.search-box input:hover {
+  transform: scale(1.009);
+}
+
+.search-box input::placeholder {
+  color: #929292;
+  transition: 0.3s;
+}
+.search-box input:focus::placeholder {
+  color: #bfbfbf;
+}
+.search .search-box i {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  color: #8d8d8d;
+  font-size: 1.4rem;
+  z-index: 2;
+  transition: var(--main--transiton);
+  cursor: pointer;
+}
+.search-box:hover i {
+  right: 15px;
+}
+@media (max-width: 771px) {
+  .search .content {
+    width: 80%;
+  }
+
+  .search h1 {
+    font-size: 1.65rem;
+  }
+  .search p {
+    font-size: 1rem;
+  }
+
+  .search .search-box {
+    height: 35px;
+    margin: 45px 0;
+    position: relative;
+  }
+  .search .search-box input {
+    font-size: 0.9rem;
+  }
+  .search .search-box i {
+    font-size: 1.2rem;
+  }
+}
+/* End Search Box */
+
+/* Start Gallary */
+.gallary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gallary ul.images {
+  gap: 15px;
+  max-width: 95%;
+  margin-top: 40px;
+  columns: 5 340px;
+}
+
+/* Start Card Info */
+.gallary ul.images li.card {
+  position: relative;
+  list-style: none;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.gallary ul.images li.card .details {
+  position: absolute;
+  z-index: 4;
+  width: 100%;
+  bottom: -100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  transition: bottom 0.2s ease;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+.gallary ul.images li.card:hover .details {
+  bottom: 0;
+}
+.gallary ul.images .photographer {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.gallary .photographer i {
+  font-size: 1.5rem;
+}
+.gallary .photographer span {
+  font-size: 1.02rem;
+}
+.details button {
+  background: #fff;
+  font-size: 1.1rem;
+  padding: 3px 8px;
+  transition: bottom var(--main--transiton) ease;
+  cursor: pointer;
+}
+.details .download-btn:hover {
+  background: #f2f2f2;
+}
+/* End Card Info */
+
+.gallary ul.images li.card img {
+  width: 100%;
+  display: block; /* Ensures the image behaves like a block element */
+}
+.gallary .load-more {
+  background-color: #8a6cff;
+  color: white;
+  margin: 50px 0;
+  font-size: 1.2rem;
+  padding: 12px 27px;
+  cursor: pointer;
+  transition: var(--main--transiton);
+}
+.gallary .load-more:hover {
+  transform: scale(1.009);
+}
+.gallary .load-more.loading {
+  opacity: 0.5;
+  pointer-events: none;
+}
+/* End Gallary */
+
+/* Start Light Box */
+.light-box {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.65);
+  width: 100%;
+  height: 100%;
+  z-index: 103;
+  display: none;
+}
+.light-box .container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.light-box .wrapper {
+  background-color: #fff;
+  padding: 50px 60px 0px;
+  border-radius: 10px;
+  width: 70%;
+  height: 80%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.light-box .wrapper header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  position: absolute;
+  width: 100%;
+  top: 30px;
+}
+.light-box .wrapper header .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  right: 20px;
+}
+.light-box .wrapper header .photographer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  left: 20px;
+  text-transform: capitalize;
+  color: #333;
+}
+.light-box .wrapper header .photographer i {
+  font-size: 1.7rem;
+}
+.light-box .wrapper header .photographer span {
+  font-size: 1.2rem;
+}
+.light-box .wrapper header .buttons i {
+  background-color: #8a6cff;
+  color: white;
+  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: var(--main--transiton);
+}
+.light-box .wrapper header .buttons i:hover {
+  opacity: 1;
+}
+.light-box .wrapper header .buttons i:last-of-type {
+  background-color: #5d5d5d;
+}
+.light-box .wrapper .preview-img img {
+  max-width: 80vw;
+  max-height: 70vh;
+  display: block;
+  /* object-fit: contain; */
+  border-radius: 10px;
+}
+@media (max-width: 771px) {
+  .light-box .wrapper {
+    padding: 30px 40px 0px;
+    width: 90%;
+    height: 75%;
+  }
+
+  .light-box .wrapper header .photographer i {
+    font-size: 1.4rem;
+  }
+  .light-box .wrapper header .photographer span {
+    font-size: 0.9rem;
+  }
+  .light-box .wrapper header .buttons i {
+    font-size: 1rem;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+  }
+  .light-box .wrapper .preview-img img {
+    max-width: 80vw;
+    max-height: 60vh;
+    display: block;
+    object-fit: contain;
+  }
+}
+/* End Light Box */
